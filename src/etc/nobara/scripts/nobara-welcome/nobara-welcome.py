@@ -279,7 +279,7 @@ class Application:
         os.system("/usr/bin/nobara-amdgpu-config")
     ### ROCm ###
     def enter_rocm(self, widget):
-        os.system("/etc/nobara/scripts/nobara-welcome/rocm.sh")
+        subprocess.run(["/usr/lib/pika/welcome/xdg-terminal '/usr/lib/pika/welcome/pkcon-install.sh install nobara-rocm-meta'"], shell=True)
     ### XONE ###
     def enter_xone(self, widget):
         os.system("/usr/bin/nobara-controller-config")

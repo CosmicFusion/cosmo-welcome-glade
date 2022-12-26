@@ -1,7 +1,7 @@
 BuildArch:              noarch
 
 Name:          nobara-welcome
-Version:       1.6.23
+Version:       1.7
 Release:       1%{?dist}
 License:       GPLv2
 Group:         System Environment/Libraries
@@ -58,7 +58,6 @@ Nobara's Python3 & GTK3 built Welcome App
 %attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/codec.sh"
 %attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/nobara-welcome.py"
 %attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/nvidia.sh"
-%attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/rocm.sh"
 %attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/refresh.sh"
 %attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/xdg-terminal"
 %attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/pkcon-install.sh"
