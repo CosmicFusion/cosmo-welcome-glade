@@ -270,119 +270,119 @@ class Application:
     
     ### CODEC ###
     def enter_install_codec(self, widget):
-        os.system("/etc/nobara/scripts/nobara-welcome/codec.sh")
+        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/codec.sh"])
     ### NVIDIA ###
     def enter_nvidia(self, widget):
-        os.system("/etc/nobara/scripts/nobara-welcome/nvidia.sh")
+        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/nvidia.sh"])
     ### AMD PRO ###
     def enter_amd(self, widget):
-        os.system("/usr/bin/nobara-amdgpu-config")
+        subprocess.Popen(["/usr/bin/nobara-amdgpu-config"])
     ### ROCm ###
     def enter_rocm(self, widget):
-        subprocess.run(["/usr/lib/pika/welcome/xdg-terminal '/usr/lib/pika/welcome/pkcon-install.sh install nobara-rocm-meta'"], shell=True)
+        subprocess.Popen(["/usr/lib/pika/welcome/xdg-terminal '/usr/lib/pika/welcome/pkcon-install.sh install nobara-rocm-meta'"], shell=True)
     ### XONE ###
     def enter_xone(self, widget):
-        os.system("/usr/bin/nobara-controller-config")
+        subprocess.Popen(["/usr/bin/nobara-controller-config"])
     ### PROTONUP ###
     def enter_protonup(self, widget):
-        os.system("/usr/bin/protonup-qt") 
+        subprocess.Popen(["/usr/bin/protonup-qt"]) 
    
    
     #### Apps Entries ####
    
     ### APPS ###
     def enter_apps(self, widget):
-        os.system("/etc/nobara/scripts/nobara-welcome/apps.sh")
+        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/apps.sh"])
     ### WEBAPPS ###
     def enter_webapps(self, widget):
-        os.system("/usr/bin/webapp-manager")
+        subprocess.Popen(["/usr/bin/webapp-manager"])
 
     ##### QUICK SETUP ENTRIES #####
     
     ### LOGIN MANAGER ###
     def enter_dm(self, widget):
-        os.system("/usr/bin/nobara-login-config")
+        subprocess.Popen(["/usr/bin/nobara-login-config"])
     ### LAYOUTS ###
     def enter_layout(self, widget):
         layouts_file = Path('/usr/bin/nobara-gnome-layouts')
         if layouts_file.is_file():
-            os.system("/usr/bin/nobara-gnome-layouts")
+            subprocess.Popen(["/usr/bin/nobara-gnome-layouts"])
         else:
-            subprocess.run(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh install nobara-gnome-layouts'"], shell=True)
+            subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh install nobara-gnome-layouts'"], shell=True)
         pass
     ### THEMES ###
     def enter_theme(self, widget):
-        os.system("/usr/bin/gnome-tweaks")
+        subprocess.Popen(["/usr/bin/gnome-tweaks"])
     ### PLING ###
     def enter_pling(self, widget):
-        os.system("xdg-open https://pling.com/")
+        subprocess.Popen(["xdg-open https://pling.com/"])
     ### EXTENSION ###
     def enter_extension(self, widget):
-        os.system("/usr/bin/extension-manager")
+        subprocess.Popen(["/usr/bin/extension-manager"])
 
     #### TROUBLESHOOT ENTRIES ####
     
     ### Troubleshoot ###
     def enter_troubleshoot(self, widget):
-        os.system("xdg-open https://nobaraproject.org/docs/upgrade-troubleshooting/")
+        subprocess.Popen(["xdg-open https://nobaraproject.org/docs/upgrade-troubleshooting/"])
     ### Docs ###
     def enter_doc(self, widget):
-        os.system("xdg-open https://nobaraproject.org/docs/")
+        subprocess.Popen(["xdg-open https://nobaraproject.org/docs/"])
     ### Distro Sync ###
     def enter_distrosync(self, widget):
-        os.system("/usr/bin/nobara-sync")
+        subprocess.Popen(["/usr/bin/nobara-sync"])
 
 
     #### COMMUNITY ENTRIES ####
     
     ### discord ###
     def enter_discord(self, widget):
-        os.system("xdg-open https://discord.gg/6y3BdzC")
+        subprocess.Popen(["xdg-open https://discord.gg/6y3BdzC"])
     ### reddit ###
     def enter_reddit(self, widget):
-        os.system("xdg-open https://www.reddit.com/r/NobaraProject/")
+        subprocess.Popen(["xdg-open https://www.reddit.com/r/NobaraProject/"])
         
     #### Contribute ENTRIES ####
     
     ### patreon ###
     def enter_patreon(self, widget):
-        os.system("xdg-open https://www.patreon.com/gloriouseggroll")
+        subprocess.Popen(["xdg-open https://www.patreon.com/gloriouseggroll"])
     ### design ###
     def enter_design(self, widget):
-        os.system("xdg-open https://discord.com/channels/110175050006577152/1015154123114549309")
+        subprocess.Popen(["xdg-open https://discord.com/channels/110175050006577152/1015154123114549309"])
     ### GE GITLAB ###
     def enter_ge_gitlab(self, widget):
-        os.system("xdg-open https://gitlab.com/GloriousEggroll")
+        subprocess.Popen(["xdg-open https://gitlab.com/GloriousEggroll"])
     ### GE GITHUB ###
     def enter_ge_github(self, widget):
-        os.system("xdg-open https://github.com/GloriousEggroll")
+        subprocess.Popen(["xdg-open https://github.com/GloriousEggroll"])
     ### COSMO GITHUB ###
     def enter_cosmo_github(self, widget):
-        os.system("xdg-open https://github.com/CosmicFusion")
+        subprocess.Popen(["xdg-open https://github.com/CosmicFusion"])
     ###############################################################
     #### Install Window ####
     
     ### Blender ###
     def enter_install_blender(self, widget):
-        subprocess.run(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh install blender'"], shell=True)
+        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh install blender'"], shell=True)
     def enter_remove_blender(self, widget):
-        subprocess.run(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh remove blender'"], shell=True)
+        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh remove blender'"], shell=True)
     
     ### KDENLIVE ###
     def enter_install_kdenlive(self, widget):
-        subprocess.run(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh install kdenlive'"], shell=True)
+        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh install kdenlive'"], shell=True)
     def enter_remove_kdenlive(self, widget):
-        subprocess.run(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh remove kdenlive catdoc dvdauthor kdenlive kf5-kfilemetadata kf5-knotifyconfig qt5-qtnetworkauth'"], shell=True)
+        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh remove kdenlive catdoc dvdauthor kdenlive kf5-kfilemetadata kf5-knotifyconfig qt5-qtnetworkauth'"], shell=True)
     ### OBS STUDIO ###
     def enter_install_obs(self, widget):
-        subprocess.run(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh install obs-studio'"], shell=True)
+        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh install obs-studio'"], shell=True)
     def enter_remove_obs(self, widget):
-        subprocess.run(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh remove obs-studio'"], shell=True)
+        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh remove obs-studio'"], shell=True)
     ### DISCORD ###
     def enter_install_discord(self, widget):
-        subprocess.run(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh install discord'"], shell=True)
+        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh install discord'"], shell=True)
     def enter_remove_discord(self, widget):
-        subprocess.run(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh remove discord'"], shell=True)
+        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh remove discord'"], shell=True)
         
 Application()
 Gtk.main()
