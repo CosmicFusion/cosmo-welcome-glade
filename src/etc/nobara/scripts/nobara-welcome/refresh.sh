@@ -37,19 +37,13 @@ if [[ $INTERNET == yes ]]; then
 fi
 
 ### Flatpak UPGRADE
-if [[ $INTERNET == yes ]]; then
-	if flatpak --version
-	then
+if [[ $INTERNET == yes ]] && [[ -x "$(command -v flatpak)" ]]; then
 	flatpak_install_progress
-	fi
 fi
 
 ### Snap UPGRADE
-if [[ $INTERNET == yes ]]; then
-	if snap --version
-	then
+if [[ $INTERNET == yes ]] && [[ -x "$(command -v snap)" ]]; then
 	snap_install_progress
-	fi
 fi
 
 ### Final dialog
