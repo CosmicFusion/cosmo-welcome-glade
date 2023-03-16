@@ -1,7 +1,7 @@
 BuildArch:              noarch
 
 Name:          nobara-welcome
-Version:       2.3
+Version:       2.4
 Release:       1%{?dist}
 License:       GPLv2
 Group:         System Environment/Libraries
@@ -49,22 +49,14 @@ wget https://raw.githubusercontent.com/CosmicFusion/cosmo-welcome-glade/main/LIC
 
 %description
 Nobara's Python3 & GTK3 built Welcome App
-%files
-%attr(0755, root, root) "/usr/bin/nobara-welcome"
-%attr(0755, root, root) "/usr/bin/nobara-autostart"
-%attr(0755, root, root) "/usr/bin/nobara-sync"
-%attr(0644, root, root) "/usr/share/glib-2.0/schemas/org.nobara.welcome.gschema.xml"
-%attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/apps.sh"
-%attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/codec.sh"
-%attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/nobara-welcome.py"
-%attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/nvidia.sh"
-%attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/refresh.sh"
-%attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/xdg-terminal"
-%attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/pkcon-install.sh"
-%attr(0644, root, root) "/etc/nobara/scripts/nobara-welcome/nobara-welcome.ui"
-%attr(0644, root, root) "/usr/share/licenses/nobara-welcome/LICENSE"
-%attr(0644, root, root) "/usr/share/applications/nobara-welcome.desktop" 
-%attr(0644, root, root) "/usr/share/applications/nobara-sync.desktop" 
+%files 
+%attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/*
+%attr(0755, root, root) "/etc/nobara/scripts/nobara-multimedia/*
+%attr(0755, root, root) "/usr/bin/*
+%attr(0644, root, root) "/usr/share/applications/*
+%attr(0644, root, root) "/usr/share/glib-2.0
+%attr(0644, root, root) "/usr/share/glib-2.0/schemas
+%attr(0644, root, root) "/usr/share/glib-2.0/schemas/org.nobara.welcome.gschema.xml
 %attr(0644, root, root) "/usr/share/icons/hicolor/64x64/apps/*.svg"
 %attr(0644, root, root) "%{_sysconfdir}/xdg/autostart/nobara-autostart.desktop"
 
