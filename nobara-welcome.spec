@@ -50,13 +50,11 @@ wget https://raw.githubusercontent.com/CosmicFusion/cosmo-welcome-glade/main/LIC
 %description
 Nobara's Python3 & GTK3 built Welcome App
 %files 
-%attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/*
-%attr(0755, root, root) "/etc/nobara/scripts/nobara-multimedia/*
-%attr(0755, root, root) "/usr/bin/*
-%attr(0644, root, root) "/usr/share/applications/*
-%attr(0644, root, root) "/usr/share/glib-2.0
-%attr(0644, root, root) "/usr/share/glib-2.0/schemas
-%attr(0644, root, root) "/usr/share/glib-2.0/schemas/org.nobara.welcome.gschema.xml
+%attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/*"
+%attr(0755, root, root) "/etc/nobara/scripts/nobara-multimedia/*"
+%attr(0755, root, root) "/usr/bin/*"
+%attr(0644, root, root) "/usr/share/applications/*"
+%attr(0644, root, root) "/usr/share/glib-2.0/schemas/*"
 %attr(0644, root, root) "/usr/share/icons/hicolor/64x64/apps/*.svg"
 %attr(0644, root, root) "%{_sysconfdir}/xdg/autostart/nobara-autostart.desktop"
 
