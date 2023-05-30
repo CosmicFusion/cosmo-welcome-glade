@@ -52,6 +52,7 @@ Nobara's Python3 & GTK3 built Welcome App
 %files 
 %attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/*"
 %attr(0755, root, root) "/etc/nobara/scripts/nobara-multimedia/*"
+%attr(0755, root, root) "/etc/nobara/scripts/nobara-davinci/*"
 %attr(0755, root, root) "/usr/bin/*"
 %attr(0644, root, root) "/usr/share/applications/*"
 %attr(0644, root, root) "/usr/share/glib-2.0/schemas/*"
@@ -61,3 +62,4 @@ Nobara's Python3 & GTK3 built Welcome App
 
 %post
 glib-compile-schemas /usr/share/glib-2.0/schemas/
+
