@@ -12,7 +12,7 @@ internet_check() {
 }
 
 dnf_install_progress() {	
-	pkexec bash -c "sudo dnf update -y rpmfusion-nonfree-release rpmfusion-free-release fedora-repos nobara-repos --refresh && sudo -S dnf distro-sync -y --refresh && sudo -S dnf update --refresh && touch /tmp/dnf.sync.success && chown $LOGNAME:$LOGNAME /tmp/dnf.sync.success" | tee /dev/tty | grep -i 'Running transaction check' && export DNF_STATE_STAGE=true
+	pkexec bash /etc/nobara/scripts/nobara-welcome/updater.sh | tee /dev/tty | grep -i 'Running transaction check' && export DNF_STATE_STAGE=true
 }
 
 flatpak_install_progress() {
