@@ -1,5 +1,5 @@
 #! /bin/bash
-/usr/bin/codeccheck
+/usr/bin/nobara-multimedia-wizard
 if [ $? -eq 0 ]; then
-    zenity --error --text='No Codec Change Required!'
+    zenity --error --text='Multimedia codecs already installed, no action required.'
 fi
