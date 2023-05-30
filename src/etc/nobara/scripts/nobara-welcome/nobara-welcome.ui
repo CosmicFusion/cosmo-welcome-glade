@@ -4,10 +4,10 @@
 <interface>
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkApplicationWindow" id="main_Window">
-    <property name="width-request">850</property>
+    <property name="width-request">500</property>
     <property name="height-request">500</property>
     <property name="can-focus">False</property>
-    <property name="default-width">850</property>
+    <property name="default-width">1300</property>
     <property name="default-height">500</property>
     <property name="icon-name">fedora-logo-icon</property>
     <property name="startup-id">nobara_welcome</property>
@@ -48,7 +48,6 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="halign">center</property>
-                        <property name="margin-end">160</property>
                         <property name="orientation">vertical</property>
                         <child>
                           <object class="GtkBox" id="Welcome_Main_box">
@@ -67,7 +66,7 @@
                                 <property name="margin-top">15</property>
                                 <property name="hexpand">True</property>
                                 <property name="vexpand">True</property>
-                                <property name="label" translatable="yes">&lt;big&gt;Welcome to &lt;b&gt;Nobara Linux 37&lt;/b&gt;&lt;/big&gt;</property>
+                                <property name="label" translatable="yes">&lt;big&gt;Welcome to &lt;b&gt;Nobara Linux 38&lt;/b&gt;&lt;/big&gt;</property>
                                 <property name="use-markup">True</property>
                               </object>
                               <packing>
@@ -176,6 +175,7 @@ Enjoy!
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt;Update my system&lt;/big&gt; </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -239,6 +239,7 @@ Get media codecs and libraries (Such as : FFMPEG, and VA-API) which are needed f
 applications and provide hardware accelerated video playback/decoding and encoding.
 </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -303,6 +304,7 @@ Installs proprietary NVIDIA® drivers that significantly increase performance fo
 
 </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                                 <property name="yalign">0.5</property>
                               </object>
@@ -368,6 +370,7 @@ Install and update software, using Gnome Software on GNOME, and Discover on KDE.
 
 </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -432,6 +435,7 @@ native desktop applications.
 
 </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -522,6 +526,7 @@ Blender is the free and open source 3D creation suite. It supports the entirety 
 
 </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -606,6 +611,7 @@ KDE Non-Linear Video Editor an open source video editor built on Qt and the KDE 
 
 </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -690,6 +696,7 @@ Open Broadcaster Software the free and open source software for video recording 
 
 </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                                 <property name="yalign">0.5</property>
                               </object>
@@ -775,6 +782,7 @@ Discord is a VoIP and instant messaging social platform. Users have the ability 
  with voice calls, video calls, text messaging, media and files in private chats or as part of 
 communities called "servers".</property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -886,6 +894,7 @@ Installs proprietary AMD® drivers that add a few neat features not found in the
 (RX 4XX and newer)
 </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -949,6 +958,7 @@ APIs and features, like OpenCL, HIP (Used by Blender) and many more APIs.
 (RX 4XX and newer)
 </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1013,6 +1023,7 @@ with many features and improvements.
 
 </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1076,6 +1087,7 @@ Compatibility tool for Steam Play based on Wine and additional components made b
 this tool allows steam to run windows games natively on linux.
 </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1161,6 +1173,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt;Choose a &lt;b&gt;Login Manager&lt;/b&gt;&lt;/big&gt; </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1222,6 +1235,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt;Get &lt;b&gt;New&lt;/b&gt; themes and icons&lt;/big&gt; </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1282,6 +1296,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt;Choose a &lt;b&gt;Layout&lt;/b&gt;&lt;/big&gt; </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1342,6 +1357,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;Theme&lt;/b&gt; your desktop&lt;/big&gt; </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1402,6 +1418,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt;Add &lt;b&gt;Extensions&lt;/b&gt; to your desktop&lt;/big&gt; </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1487,6 +1504,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt;Visit our &lt;b&gt;Troubleshooting/Issues&lt;/b&gt; Page&lt;/big&gt; </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1547,6 +1565,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt; Visit our &lt;b&gt;Documentation&lt;/b&gt; Page&lt;/big&gt; </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1607,6 +1626,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt;Update my system&lt;/big&gt; </property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1693,6 +1713,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt;Join our &lt;b&gt;Discord Server&lt;/b&gt;&lt;/big&gt;</property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1753,6 +1774,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt; Dive into our Community (Unofficial) &lt;b&gt;Subreddit&lt;/b&gt;&lt;/big&gt;</property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1839,6 +1861,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt;Donate to GloriousEggroll's &lt;b&gt;Patreon&lt;/b&gt;&lt;/big&gt;</property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1899,6 +1922,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt;Submit Designs and Wallpapers to our &lt;b&gt;#memes Discord Channel&lt;/b&gt;&lt;/big&gt;</property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -1959,6 +1983,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt;Contribute code to GloriousEggroll's &lt;b&gt;Gitlab&lt;/b&gt;&lt;/big&gt;</property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -2019,6 +2044,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt;Contribute code to GloriousEggroll's &lt;b&gt;Github&lt;/b&gt;&lt;/big&gt;</property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -2079,6 +2105,7 @@ this tool allows steam to run windows games natively on linux.
                                 <property name="can-focus">False</property>
                                 <property name="label" translatable="yes">&lt;big&gt;Contribute code to Cosmo's &lt;b&gt;Github&lt;/b&gt;&lt;/big&gt;</property>
                                 <property name="use-markup">True</property>
+                                <property name="wrap">True</property>
                                 <property name="xalign">0</property>
                               </object>
                               <packing>
@@ -2492,6 +2519,21 @@ this tool allows steam to run windows games natively on linux.
         <property name="subtitle" translatable="yes">Welcome to the Nobara Project</property>
         <property name="show-close-button">True</property>
         <child>
+          <object class="GtkToggleButton" id="sidebar_btn">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="pressed" handler="on_sidebar_btn_pressed" swapped="no"/>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="icon-name">format-justify-fill</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
           <object class="GtkCheckButton" id="startup_switch">
             <property name="label" translatable="yes">Show on startup</property>
             <property name="visible">True</property>
@@ -2499,6 +2541,9 @@ this tool allows steam to run windows games natively on linux.
             <property name="receives-default">False</property>
             <property name="draw-indicator">True</property>
           </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
         </child>
       </object>
     </child>

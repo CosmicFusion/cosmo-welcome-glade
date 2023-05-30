@@ -52,10 +52,14 @@ class Application:
             extension_box.hide()
         
 
-        ### app state refresh ###
+        self.main_Sidebar = self.builder.get_object("main_Sidebar")
         
+
+        ### app state refresh ###
         global app_state_refresh
         app_state_refresh = True
+        global window_state_refresh
+        window_state_refresh = True
         
         def app_state_refresh_func(): 
             blender_install_button = self.builder.get_object("blender_install_button")
@@ -100,9 +104,36 @@ class Application:
         t1 = threading.Thread(target=app_state_refresh_func)
         t1.start()
         
+        self.main_Sidebar = self.builder.get_object("main_Sidebar")
+        self.Stack = self.builder.get_object("Stack")
+        self.sidebar_btn = self.builder.get_object("sidebar_btn")
+        
+        def resolution_refresh_func():
+            while window_state_refresh == True:
+                        time.sleep(1)
+                        if self.window.get_size()[0] < 650:
+                                                self.sidebar_btn.show()
+                                                if self.sidebar_btn.get_active() == False:
+                                                        self.Stack.show()
+                                                        self.main_Sidebar.hide()
+                                                else:
+                                                        self.main_Sidebar.show()
+                                                        self.Stack.hide()
+                                                        self.main_Sidebar.set_hexpand(True)
+                        else:
+                                                        self.sidebar_btn.hide()
+                                                        self.Stack.show()
+                                                        self.main_Sidebar.show()
+                                                        self.main_Sidebar.set_hexpand(False)
+        
+        t2 = threading.Thread(target=resolution_refresh_func)
+        t2.start()
+        
         def app_state_refresh_kill(self):
             global app_state_refresh
+            global window_state_refresh
             app_state_refresh = False
+            window_state_refresh = False
         
         win.connect("destroy", app_state_refresh_kill)
         
@@ -256,6 +287,19 @@ class Application:
             cosmo_github_logo.set_from_icon_name("github", 80)
         pass
         
+    def on_sidebar_btn_pressed(self, widget):
+        time.sleep(1)
+        if self.window.get_size()[0] < 650:
+                if self.Stack.get_visible() == True:
+                        self.sidebar_btn.set_active(False) 
+                        self.main_Sidebar.show()
+                        self.Stack.hide()
+                else:
+                        self.sidebar_btn.set_active(True)
+                        self.Stack.show()
+                        self.main_Sidebar.hide()
+    
+    
     ### ENTER LOOK WINDOW ###
     def enter_add_software(self, widget):
         install_window =  self.builder.get_object("install_Window")
@@ -270,95 +314,95 @@ class Application:
     
     ### CODEC ###
     def enter_install_codec(self, widget):
-        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/codec.sh"])
+        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/codec.sh"], shell=True)
     ### NVIDIA ###
     def enter_nvidia(self, widget):
-        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/nvidia.sh"])
+        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/nvidia.sh"], shell=True)
     ### AMD PRO ###
     def enter_amd(self, widget):
-        subprocess.Popen(["/usr/bin/nobara-amdgpu-config"])
+        subprocess.Popen(["/usr/bin/nobara-amdgpu-config"], shell=True)
     ### ROCm ###
     def enter_rocm(self, widget):
         subprocess.Popen(["/usr/lib/pika/welcome/xdg-terminal '/usr/lib/pika/welcome/pkcon-install.sh install nobara-rocm-meta'"], shell=True)
     ### XONE ###
     def enter_xone(self, widget):
-        subprocess.Popen(["/usr/bin/nobara-controller-config"])
+        subprocess.Popen(["/usr/bin/nobara-controller-config"], shell=True)
     ### PROTONUP ###
     def enter_protonup(self, widget):
-        subprocess.Popen(["/usr/bin/protonup-qt"]) 
+        subprocess.Popen(["/usr/bin/protonup-qt"], shell=True) 
    
    
     #### Apps Entries ####
    
     ### APPS ###
     def enter_apps(self, widget):
-        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/apps.sh"])
+        subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/apps.sh"], shell=True)
     ### WEBAPPS ###
     def enter_webapps(self, widget):
-        subprocess.Popen(["/usr/bin/webapp-manager"])
+        subprocess.Popen(["/usr/bin/webapp-manager"], shell=True)
 
     ##### QUICK SETUP ENTRIES #####
     
     ### LOGIN MANAGER ###
     def enter_dm(self, widget):
-        subprocess.Popen(["/usr/bin/nobara-login-config"])
+        subprocess.Popen(["/usr/bin/nobara-login-config"], shell=True)
     ### LAYOUTS ###
     def enter_layout(self, widget):
         layouts_file = Path('/usr/bin/nobara-gnome-layouts')
         if layouts_file.is_file():
-            subprocess.Popen(["/usr/bin/nobara-gnome-layouts"])
+            subprocess.Popen(["/usr/bin/nobara-gnome-layouts"], shell=True)
         else:
             subprocess.Popen(["/etc/nobara/scripts/nobara-welcome/xdg-terminal '/etc/nobara/scripts/nobara-welcome/pkcon-install.sh install nobara-gnome-layouts'"], shell=True)
         pass
     ### THEMES ###
     def enter_theme(self, widget):
-        subprocess.Popen(["/usr/bin/gnome-tweaks"])
+        subprocess.Popen(["/usr/bin/gnome-tweaks"], shell=True)
     ### PLING ###
     def enter_pling(self, widget):
-        subprocess.Popen(["xdg-open https://pling.com/"])
+        subprocess.Popen(["xdg-open https://pling.com/"], shell=True)
     ### EXTENSION ###
     def enter_extension(self, widget):
-        subprocess.Popen(["/usr/bin/extension-manager"])
+        subprocess.Popen(["/usr/bin/extension-manager"], shell=True)
 
     #### TROUBLESHOOT ENTRIES ####
     
     ### Troubleshoot ###
     def enter_troubleshoot(self, widget):
-        subprocess.Popen(["xdg-open https://nobaraproject.org/docs/upgrade-troubleshooting/"])
+        subprocess.Popen(["xdg-open https://nobaraproject.org/docs/upgrade-troubleshooting/"], shell=True)
     ### Docs ###
     def enter_doc(self, widget):
-        subprocess.Popen(["xdg-open https://nobaraproject.org/docs/"])
+        subprocess.Popen(["xdg-open https://nobaraproject.org/docs/"], shell=True)
     ### Distro Sync ###
     def enter_distrosync(self, widget):
-        subprocess.Popen(["/usr/bin/nobara-sync"])
+        subprocess.Popen(["/usr/bin/nobara-sync"], shell=True)
 
 
     #### COMMUNITY ENTRIES ####
     
     ### discord ###
     def enter_discord(self, widget):
-        subprocess.Popen(["xdg-open https://discord.gg/6y3BdzC"])
+        subprocess.Popen(["xdg-open https://discord.gg/6y3BdzC"], shell=True)
     ### reddit ###
     def enter_reddit(self, widget):
-        subprocess.Popen(["xdg-open https://www.reddit.com/r/NobaraProject/"])
+        subprocess.Popen(["xdg-open https://www.reddit.com/r/NobaraProject/"], shell=True)
         
     #### Contribute ENTRIES ####
     
     ### patreon ###
     def enter_patreon(self, widget):
-        subprocess.Popen(["xdg-open https://www.patreon.com/gloriouseggroll"])
+        subprocess.Popen(["xdg-open https://www.patreon.com/gloriouseggroll"], shell=True)
     ### design ###
     def enter_design(self, widget):
-        subprocess.Popen(["xdg-open https://discord.com/channels/110175050006577152/1015154123114549309"])
+        subprocess.Popen(["xdg-open https://discord.com/channels/110175050006577152/1015154123114549309"], shell=True)
     ### GE GITLAB ###
     def enter_ge_gitlab(self, widget):
-        subprocess.Popen(["xdg-open https://gitlab.com/GloriousEggroll"])
+        subprocess.Popen(["xdg-open https://gitlab.com/GloriousEggroll"], shell=True)
     ### GE GITHUB ###
     def enter_ge_github(self, widget):
-        subprocess.Popen(["xdg-open https://github.com/GloriousEggroll"])
+        subprocess.Popen(["xdg-open https://github.com/GloriousEggroll"], shell=True)
     ### COSMO GITHUB ###
     def enter_cosmo_github(self, widget):
-        subprocess.Popen(["xdg-open https://github.com/CosmicFusion"])
+        subprocess.Popen(["xdg-open https://github.com/CosmicFusion"], shell=True)
     ###############################################################
     #### Install Window ####
     
