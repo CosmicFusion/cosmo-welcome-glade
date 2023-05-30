@@ -13,6 +13,7 @@ internet_check() {
 
 dnf_install_progress() {	
 	pkexec bash /etc/nobara/scripts/nobara-welcome/updater.sh | tee /dev/tty | grep -i 'Running transaction check' && export DNF_STATE_STAGE=true
+	touch /tmp/dnf.sync.success
 }
 
 flatpak_install_progress() {
@@ -51,16 +52,16 @@ if cat /tmp/dnf.sync.success ; then
     if [[ $DNF_STATE_STAGE == true ]]; then
     	if zenity --question --title='Update my system' --text='Update complete! It is recommended to reboot for changes to apply properly. Reboot now?' 
     	then
-    		rm /tmp/dnf.sync.success
+    		rm -Rf /tmp/dnf.sync.success
     		systemctl reboot
     	else
-    		rm /tmp/dnf.sync.success
+    		rm -Rf /tmp/dnf.sync.success
     	fi
     else
     	zenity --info --title='Update my system' --text='No updates required, your system is already up to date!' 
     fi
 else
 	zenity --error --title='Update my system' --text="Failed to update!"
-	rm /tmp/dnf.sync.success
+	rm -Rf /tmp/dnf.sync.success
 fi
 rm /tmp/dnf.sync.success
