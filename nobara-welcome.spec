@@ -57,6 +57,7 @@ Nobara's Python3 & GTK3 built Welcome App
 %attr(0644, root, root) "/usr/share/glib-2.0/schemas/*"
 %attr(0644, root, root) "/usr/share/icons/hicolor/64x64/apps/*.svg"
 %attr(0644, root, root) "%{_sysconfdir}/xdg/autostart/nobara-autostart.desktop"
+%attr(0644, root, root) "/usr/share/licenses/nobara-welcome/LICENSE"
 
 %post
 glib-compile-schemas /usr/share/glib-2.0/schemas/
