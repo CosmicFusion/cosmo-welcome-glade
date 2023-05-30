@@ -9,7 +9,7 @@
     <property name="default-width">900</property>
     <property name="default-height">600</property>
     <property name="icon-name">media-tape</property>
-    <property name="startup-id">nobara.nobara.multimedia</property>
+    <property name="startup-id">nobara.multimedia</property>
     <child>
       <object class="GtkBox" id="main_box">
         <property name="visible">True</property>

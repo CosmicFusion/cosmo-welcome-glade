@@ -10,7 +10,7 @@ print(sys.argv[1])
 column_names = False
 drop_nan = False
 df = None
-application_id="cosmo.nvidia.wizard"
+application_id="nobara.multimedia"
         
 builder = Gtk.Builder()
 builder.add_from_file("/etc/nobara/scripts/nobara-multimedia/process.ui")

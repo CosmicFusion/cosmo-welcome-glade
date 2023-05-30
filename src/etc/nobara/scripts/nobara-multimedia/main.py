@@ -15,7 +15,7 @@ class Application(Gtk.ApplicationWindow):
 		self.column_names = False
 		self.drop_nan = False
 		self.df = None
-		application_id="nobara.nobara.multimedia"
+		application_id="nobara.multimedia"
 
 		self.builder = Gtk.Builder()
 		self.builder.add_from_file("/etc/nobara/scripts/nobara-multimedia/main.ui")
