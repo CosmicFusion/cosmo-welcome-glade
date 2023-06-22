@@ -6,7 +6,7 @@ from gi.repository import Gtk, GObject, Vte, GLib
 import os, subprocess, time, threading
 
 
-hasresolve = subprocess.run(["dnf list installed | grep rocm-opencl && cat /usr/bin/resolve &>/dev/null"], shell=True)
+hasglib2 = subprocess.run(["ls /opt/resolve/libs | grep libglib-2"], shell=True)
 
 class Application(Gtk.ApplicationWindow):
 	### MAIN WINDOW ###
@@ -39,7 +39,7 @@ class Application(Gtk.ApplicationWindow):
 		self.window = self.builder.get_object("main_window")
 		self.window.show()
 		
-		if (hasresolve.returncode) != 0:
+		if (hasglib2.returncode) == 0:
 			self.center_text.set_label("Davinci Resolve requires a few additional configurations in order to work properly,\n would you like those to be done now? (strongly recommended)")
 			self.status_logo.set_from_icon_name("media-tape", 64)
 			self.btn_decline.set_sensitive(True)
