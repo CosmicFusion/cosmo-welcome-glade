@@ -163,7 +163,8 @@ class Application:
             rocm_logo = self.builder.get_object("rocm_logo")
             xone_logo = self.builder.get_object("xone_logo")
             protonup_logo = self.builder.get_object("protonup_logo")
-            
+            resolve_logo = self.builder.get_object("resolve_logo")
+
             dm_logo = self.builder.get_object("dm_logo")
             pling_logo = self.builder.get_object("pling_logo")
             layout_logo = self.builder.get_object("layout_logo")
@@ -200,7 +201,8 @@ class Application:
             rocm_logo.set_from_icon_name("amd", 80)
             xone_logo.set_from_icon_name("input-gaming", 80)
             protonup_logo.set_from_icon_name("net.davidotek.pupgui2", 80)
-            
+            resolve_logo.set_from_icon_name("DaVinci_Resolve", 80)
+
             dm_logo.set_from_icon_name("applications-graphics", 80)
             pling_logo.set_from_icon_name("applications-graphics", 80)
             layout_logo.set_from_icon_name("desktop", 80)
@@ -228,7 +230,8 @@ class Application:
             amd_logo = self.builder.get_object("amd_logo")
             rocm_logo = self.builder.get_object("rocm_logo")
             xone_logo = self.builder.get_object("xone_logo")
-            
+            resolve_logo = self.builder.get_object("resolve_logo")
+
             dm_logo = self.builder.get_object("dm_logo")
             pling_logo = self.builder.get_object("pling_logo")
             layout_logo = self.builder.get_object("layout_logo")
@@ -262,7 +265,8 @@ class Application:
             amd_logo.set_from_icon_name("amd", 80)
             rocm_logo.set_from_icon_name("amd", 80)
             xone_logo.set_from_icon_name("input-gaming", 80)
-            
+            resolve_logo.set_from_icon_name("DaVinci_Resolve", 80)
+
             dm_logo.set_from_icon_name("emblem-readonly", 80)
             pling_logo.set_from_icon_name("emblem-downloads", 80)
             layout_logo.set_from_icon_name("desktop", 80)
@@ -332,7 +336,7 @@ class Application:
         subprocess.Popen(["/usr/bin/protonup-qt"], shell=True) 
     ### DAVINCI_RESOLVE ###
     def enter_resolve(self, widget):
-        subprocess.Popen(["/usr/bin/nobara-resolve-wizard'"], shell=True)
+        subprocess.Popen(["/usr/bin/nobara-resolve-wizard"], shell=True)
    
     #### Apps Entries ####
    
