@@ -330,7 +330,9 @@ class Application:
     ### PROTONUP ###
     def enter_protonup(self, widget):
         subprocess.Popen(["/usr/bin/protonup-qt"], shell=True) 
-   
+    ### DAVINCI_RESOLVE ###
+    def enter_resolve(self, widget):
+        subprocess.Popen(["/usr/bin/nobara-resolve-wizard'"], shell=True)
    
     #### Apps Entries ####
    
