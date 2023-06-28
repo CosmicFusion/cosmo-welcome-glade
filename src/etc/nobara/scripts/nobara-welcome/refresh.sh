@@ -19,7 +19,7 @@ dnf_install_progress() {
 flatpak_install_progress() {
 	if zenity --question --text="Flatpak has been detected! Would like to update all Flatpaks on your system?"
 	then
-	pkexec bash -c "flatpak repair && systemctl restart flatpak-system-helper.service && flatpak update --appstream -y && flatpak update -y && touch /tmp/flatpak.sync.success && chown $LOGNAME:$LOGNAME /tmp/flatpak.sync.success" && flatpak update --appstream -y && flatpak update -y
+	pkexec bash -c "flatpak update --appstream -y && flatpak update -y && touch /tmp/flatpak.sync.success && chown $LOGNAME:$LOGNAME /tmp/flatpak.sync.success" && flatpak update --appstream -y && flatpak update -y
 	fi
 }
 
