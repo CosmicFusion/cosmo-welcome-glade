@@ -164,6 +164,7 @@ class Application:
             xone_logo = self.builder.get_object("xone_logo")
             protonup_logo = self.builder.get_object("protonup_logo")
             resolve_logo = self.builder.get_object("resolve_logo")
+            steamfix_logo = self.builder.get_object("steamfix_logo")
 
             dm_logo = self.builder.get_object("dm_logo")
             pling_logo = self.builder.get_object("pling_logo")
@@ -337,7 +338,10 @@ class Application:
     ### DAVINCI_RESOLVE ###
     def enter_resolve(self, widget):
         subprocess.Popen(["/usr/bin/nobara-resolve-wizard"], shell=True)
-   
+    ### STEAM_FIXES ###
+    def enter_steamfix(self, widget):
+        subprocess.Popen(["/usr/bin/nobara-steam-fixes"], shell=True)
+
     #### Apps Entries ####
    
     ### APPS ###
