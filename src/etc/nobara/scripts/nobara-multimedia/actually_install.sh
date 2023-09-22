@@ -18,7 +18,7 @@
 	pkcon install -y opencore-amr vo-amrwbenc x264-libs x265-libs --filter ~arch 
         echo "60"; sleep 1
 	echo "# Installing hardware video encoding and decoding drivers"
-	pkcon install -y intel-media-driver libva-intel-driver nvidia-vaapi-driver mesa-va-drivers-freeworld mesa-vdpau-drivers-freeworld 
+	pkcon install -y intel-media-driver libva-intel-driver mesa-va-drivers-freeworld mesa-vdpau-drivers-freeworld 
         echo "80"; sleep 1
 	echo "# Installing ffmpeg"
 	pkcon install -y ffmpeg 

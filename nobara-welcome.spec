@@ -53,6 +53,7 @@ Nobara's Python3 & GTK3 built Welcome App
 %attr(0755, root, root) "/etc/nobara/scripts/nobara-welcome/*"
 %attr(0755, root, root) "/etc/nobara/scripts/nobara-multimedia/*"
 %attr(0755, root, root) "/etc/nobara/scripts/nobara-davinci/*"
+%attr(0755, root, root) "/etc/nobara/scripts/steam-game-fixups/*"
 %attr(0755, root, root) "/usr/bin/*"
 %attr(0644, root, root) "/usr/share/applications/*"
 %attr(0644, root, root) "/usr/share/glib-2.0/schemas/*"
