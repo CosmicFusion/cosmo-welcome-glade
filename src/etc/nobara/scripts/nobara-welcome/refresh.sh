@@ -1,4 +1,18 @@
 #! /bin/bash
+PASSWORD=$(zenity --password) 
+CORRECT_PASSWD=0
+while [[ $CORRECT_PASSWD = 0 ]]
+do
+	if echo $PASSWORD | sudo -S echo good
+	then
+		export CORRECT_PASSWD=1
+	else
+		unset PASSWORD && export PASSWORD=$(zenity --password)
+	fi
+done
+
+INTERNET="no"
+DNF_STATE_STAGE=false
 
 INTERNET="no"
 DNF_STATE_STAGE=false
@@ -12,21 +26,21 @@ internet_check() {
 }
 
 dnf_install_progress() {	
-	pkexec bash /etc/nobara/scripts/nobara-welcome/updater.sh | tee /dev/tty | grep -i 'Running transaction check' && export DNF_STATE_STAGE=true
+	echo $PASSWORD | sudo -S bash /etc/nobara/scripts/nobara-welcome/updater.sh | tee /dev/tty | grep -i 'Running transaction check' && export DNF_STATE_STAGE=true
 	touch /tmp/dnf.sync.success
 }
 
 flatpak_install_progress() {
 	if zenity --question --text="Flatpak has been detected! Would like to update all Flatpaks on your system?"
 	then
-	pkexec bash -c "flatpak update --appstream -y && flatpak update -y && touch /tmp/flatpak.sync.success && chown $LOGNAME:$LOGNAME /tmp/flatpak.sync.success" && flatpak update --appstream -y && flatpak update -y
+	echo $PASSWORD | sudo -S bash -c "flatpak update --appstream -y && flatpak update -y && touch /tmp/flatpak.sync.success && chown $LOGNAME:$LOGNAME /tmp/flatpak.sync.success" && flatpak update --appstream -y && flatpak update -y
 	fi
 }
 
 snap_install_progress() {
 	if zenity --question --text="Snap has been detected! Would like to update all Snaps on your system?"
 	then
-	pkexec bash -c "snap refresh && touch /tmp/snap.sync.success && chown $LOGNAME:$LOGNAME /tmp/snap.sync.success"
+	echo $PASSWORD | sudo -S bash -c "snap refresh && touch /tmp/snap.sync.success && chown $LOGNAME:$LOGNAME /tmp/snap.sync.success"
 	fi
 }
 
@@ -65,3 +79,5 @@ else
 	rm -Rf /tmp/dnf.sync.success
 fi
 rm /tmp/dnf.sync.success
+
+
